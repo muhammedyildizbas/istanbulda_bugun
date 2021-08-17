@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -13,6 +15,10 @@ class MyHomePage extends StatefulWidget{
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int yerNo=1;
+  int kisiNo=1;
+  int yemekNo=1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,100 +33,117 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: Image.asset(
-                    'assets/yer1.jpg',
+                    'assets/yer$yerNo.jpg',
                     width: 220.0,
                     height: 150.0,
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
-         /*     Container(
 
-                width: 300,
-                height: 150,
-                child: Image.asset('assets/kizkalesi.jpg' ),
+             SizedBox(height: 5,),
+              Expanded(flex: 1,
+                child: MaterialButton(
 
-                decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius:BorderRadiusDirectional.circular(10.0),color: Colors.teal),
-              ),*/
-             //SizedBox(height: 5,),
-            Expanded(flex: 1,
-             child: Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0,horizontal: 80.0),
-                child: ListTile(
-                  leading: Icon(Icons.directions_walk ,color: Colors.teal),
-                  title: Text('Nereyi Gezeyim  ', style: TextStyle(color: Colors.black),
-                  ),
+                  padding: EdgeInsets.symmetric(vertical: 4.0,horizontal: 40.0),
+
+                  child:Text(  "Nereyi Gezeyim",style: TextStyle(fontSize: 18),),
+                  color: Colors.lightBlueAccent,
+                  textColor: Colors.white,
+
+                  splashColor: Colors.black38,
+                  onPressed: () {
+
+                    setState(() {
+                      yerNo=Random().nextInt(5)+1;
+                    });
+                  },
+
+
                 ),
+
               ),
-            ),
 
 
 
-             /* Container(
 
-                width: 300,
-                height: 150,
-
-                child: CircleAvatar( child: Image.asset('assets/kardes.png')),
-                decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius:BorderRadiusDirectional.circular(10.0),color: Colors.teal),
-              ),*/
-             // SizedBox(height: 5,),
+              SizedBox(height: 5,),
               Expanded(flex: 3,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
 
                   child: Image.asset(
-                    'assets/kisi2.jpg',
+                    'assets/kisi$kisiNo.jpg',
                     width: 220.0,
                     height: 150.0,
                     fit: BoxFit.fill,
 
-                  ),
+                  )
+
                 ),
               ),
-              //SizedBox(height: 5,),
+              SizedBox(height: 5,),
 
               Expanded(flex: 1,
-                child: Card(
-                margin: EdgeInsets.symmetric(vertical: 5.0,horizontal: 80.0),
-                child: ListTile(
-                  leading: Icon(Icons.people   ,color: Colors.teal),
-                  title: Text('Kiminle Gezeyim  ', style: TextStyle(color: Colors.black),
-                  ),
-                ),
-              ),
-              ),
+                child: MaterialButton(
 
-            //  SizedBox(height: 5,),
+              splashColor: Colors.teal,
+               padding: EdgeInsets.symmetric(vertical: 4.0,horizontal: 40.0),
+
+                 child:Text(  "Kiminle Gezeyim",style: TextStyle(fontSize: 18),),
+                  color: Colors.lightBlueAccent,
+                  onPressed: () {
+
+                setState(() {
+                  kisiNo=Random().nextInt(5)+1;
+                });
+                 },
+                  textColor: Colors.white,
+
+
+                 // title: Text('Kiminle Gezeyim  ', style: TextStyle(color: Colors.black),
+                  ),
+
+                ),
+
+
+
+              SizedBox(height: 5,),
               Expanded(flex: 3,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: Image.asset(
-                    'assets/yemek3.jpg',
+                    'assets/yemek$yemekNo.jpg',
                     width: 220.0,
                     height: 150.0,
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
-            /*  Container(
 
-                width: 300,
-                height: 150,
-                child: Image.asset('assets/patlican_musakka.jpg' ),
-                decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius:BorderRadiusDirectional.circular(10.0),color: Colors.teal),
-              ),*/
-           //   SizedBox(height: 5,),
-             Expanded(flex:1,child:  Card(
-               margin: EdgeInsets.symmetric(vertical: 5.0,horizontal: 80.0),
-               child: ListTile(
-                 leading: Icon(Icons.food_bank ,color: Colors.teal),
-                 title: Text('Ne Yiyeyim', style: TextStyle(color: Colors.black),
-                 ),
-               ),
-             ),
-             ),
+            SizedBox(height: 5,),
+              Expanded(flex: 1,
+                child: MaterialButton(
 
+
+                  padding: EdgeInsets.symmetric(vertical: 4.0,horizontal: 60.0),
+
+                  child:Text(  "Ne Yiyeyim",style: TextStyle(fontSize: 18),),
+                  textColor: Colors.white,
+                  splashColor: Colors.black38,
+                  color: Colors.lightBlueAccent,
+                  onPressed: () {
+
+                    setState(() {
+                      yemekNo=Random().nextInt(5)+1;
+                    });
+                  },
+
+
+                ),
+
+              ),
+              SizedBox(height: 5,),
             ],
           ),
         ),
